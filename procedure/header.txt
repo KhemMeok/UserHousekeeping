@@ -1,0 +1,175 @@
+CREATE OR REPLACE Package "RPT_BI_REPORT" Is
+  Type ref_cur1 Is Ref Cursor;
+  Procedure dg_init(p_userid Varchar2, p_debug Varchar2);
+  Procedure dg_print(msg Varchar2);
+  Procedure update_bi_user_status(p_statuscount Out Varchar2,
+                                  op_status     Out Varchar2,
+                                  op_message    Out Clob);
+  Procedure update_bi_user_email(p_statuscount Out Varchar2,
+                                 op_status     Out Varchar2,
+                                 op_message    Out Clob);
+  Procedure update_pull_last_login_bi_user(p_status_count Out Varchar2,
+                                           op_status      Out Varchar2,
+                                           op_message     Out Clob);
+  Procedure get_report_housekeeping(p_user               In Varchar2,
+                                    p_debug              In Varchar2 Default 'NN',
+                                    p_date               In Date,
+                                    p_type_process       In Varchar2,
+                                    op_data_housekeeping Out ref_cur1,
+                                    op_count             Out Number,
+                                    op_status            Out Varchar2,
+                                    op_message           Out Clob);
+  Procedure generate_report_bi_housekeeping(p_user                  In Varchar2,
+                                            p_debug                 In Varchar2 Default 'NN',
+                                            p_from_date             In Date,
+                                            p_to_date               In Date,
+                                            p_type_used             In Varchar2,
+                                            op_data_bi_housekeeping Out ref_cur1,
+                                            op_status               Out Varchar2,
+                                            op_message              Out Clob);
+  /*procedure report_deletion(p_user     in varchar2,
+  p_debug    in varchar2 default 'NN',
+  p_date     in date,
+  op_status  out varchar2,
+  op_message out clob);*/
+  Procedure get_report_deletion(p_user            In Varchar2,
+                                p_debug           In Varchar2 Default 'NN',
+                                p_date            In Date,
+                                op_data_detection Out ref_cur1,
+                                op_status         Out Varchar2,
+                                op_message        Out Clob);
+  Procedure insert_user_bi_detection(p_user         In Varchar2,
+                                     p_debug        In Varchar2 Default 'NN',
+                                     p_user_id_name In Varchar2,
+                                     op_status      Out Varchar2,
+                                     op_message     Out Clob);
+  Procedure send_email_inform_user(p_user        In Varchar2,
+                                   p_debug       In Varchar2 Default 'NN',
+                                   p_report_date In Date,
+                                   p_type_used   In Varchar2,
+                                   /*p_user_inform In Varchar2,*/
+                                   op_status  Out Varchar2,
+                                   op_message Out Clob);
+
+  /*PROCEDURE send_email_remove_bi_user(p_user        IN VARCHAR2,
+  p_debug       IN VARCHAR2 DEFAULT 'NN',
+  p_report_date IN VARCHAR2,
+  p_output      OUT CLOB,
+  op_status     OUT VARCHAR2,
+  op_message    OUT CLOB);*/
+  /*PROCEDURE get_bi_user(op_data_bi_user OUT ref_cur1,
+  op_status       OUT VARCHAR2,
+  op_message      OUT CLOB);*/
+  /* PROCEDURE pro_insert_user_pre_close(user_close IN VARCHAR2,
+  op_status  OUT VARCHAR2,
+  op_message OUT CLOB);*/
+  Procedure get_bi_user_inactive(p_date_report   In Date,
+                                 op_data_bi_user Out ref_cur1,
+                                 op_status       Out Varchar2,
+                                 op_message      Out Clob);
+  Function fn_auto_id_user_housekeeping(p_table_name Varchar2,
+                                        p_col        Varchar2) Return Number
+    Deterministic;
+  Procedure get_process_step(p_date_report In Date,
+                             p_tab_process In Varchar2,
+                             op_data_step  Out ref_cur1,
+                             op_data_stat  Out Clob,
+                             op_status     Out Varchar2,
+                             op_message    Out Clob);
+  Procedure pro_insert_process_step(p_user    In Varchar2,
+                                    p_step_id In Varchar2,
+                                    /*p_val_step     In Varchar2,*/
+                                    p_pro_date In Varchar2,
+                                    p_val_text In Varchar2,
+                                    /*p_process_data In Clob,*/
+                                    op_status  Out Varchar2,
+                                    op_message Out Clob);
+  /*  Procedure get_data_from_xml(p_xml_clob In Clob,
+  p_col_data In Varchar2,
+  p_data     Out ref_cur1,
+  op_status  Out Varchar2,
+  op_message Out Clob);*/
+  Procedure get_data_listing_db_user_housekeeping(p_start_date In Date,
+                                                  p_end_date   In Date,
+                                                  op_db_user   Out ref_cur1,
+                                                  op_status    Out Varchar2,
+                                                  op_message   Out Clob);
+  Procedure call_process_pull_db_user_housekeeping(p_user     In Varchar2,
+                                                   p_debug    In Varchar2 Default 'NN',
+                                                   p_date     In Varchar2,
+                                                   op_status  Out Varchar2,
+                                                   op_message Out Clob);
+  Procedure generate_email_content(p_brncode Varchar2,
+                                   
+                                   p_date_created         Date,
+                                   p_last_login_date      Date,
+                                   p_inserted_date        Date,
+                                   p_day_count_last_login Number,
+                                   p_footer1              Varchar2,
+                                   p_footer2              Varchar2,
+                                   p_footer3              Varchar2,
+                                   p_footer4              Varchar2,
+                                   p_footer5              Varchar2,
+                                   p_staff_id             Varchar2,
+                                   p_staff_name           Varchar2,
+                                   p_db_username          Varchar2,
+                                   p_user_role            Varchar2,
+                                   p_current_status       Varchar2,
+                                   p_dbname               Varchar2,
+                                   p_db_full_name         Varchar2,
+                                   p_email_type           Varchar2,
+                                   p_email_content        Out Clob);
+  Procedure pro_insert_process_status(p_user         In Varchar2,
+                                      p_status_id    In Varchar2,
+                                      p_status       In Varchar2,
+                                      p_status_count In Varchar2,
+                                      p_message      In Clob,
+                                      /*p_process_data In Clob,*/
+                                      p_process_date In Date,
+                                      /*p_tab_process  In Varchar2,*/
+                                      op_status  Out Varchar2,
+                                      op_message Out Clob);
+  /*PROCEDURE update_bi_user_status_new(p_status_count OUT VARCHAR2,
+                                      op_status      OUT VARCHAR2,
+                                      op_message     OUT CLOB);
+  PROCEDURE update_bi_user_email_new(p_statuscount OUT VARCHAR2,
+                                     op_status     OUT VARCHAR2,
+                                     op_message    OUT CLOB);*/
+  Procedure get_bi_user_close(p_user          In Varchar2,
+                              p_debug         In Varchar2 Default 'NN',
+                              op_date_report  Date,
+                              op_data_bi_user Out ref_cur1,
+                              op_status       Out Varchar2,
+                              op_message      Out Clob);
+  Procedure bi_inactive_operations(p_user                 In Varchar2,
+                                   p_debug                In Varchar2 Default 'NN',
+                                   p_operation            In Varchar2,
+                                   p_record_id            In Number,
+                                   p_user_id              In Varchar2 Default Null,
+                                   p_description          In Varchar2 Default Null,
+                                   p_last_login_date      In Varchar2 Default Null,
+                                   p_day_count_last_login In Varchar2 Default Null,
+                                   p_report_date          In Varchar2 Default Null,
+                                   p_date_created         In Varchar2 Default Null,
+                                   p_inserted_date        In Varchar2 Default Null,
+                                   p_get_data             Out ref_cur1,
+                                   op_status              Out Varchar2,
+                                   op_message             Out Clob);
+
+  Procedure insert_bi_user_close(p_user         In Varchar2,
+                                 p_debug        In Varchar2 Default 'NN',
+                                 op_date_report Date,
+                                 op_status      Out Varchar2,
+                                 op_message     Out Clob);
+  Procedure close_user_bi_inactive(p_user        In Varchar2,
+                                   p_debug       In Varchar2 Default 'NN',
+                                   p_date_report Date,
+                                   op_status     Out Varchar2,
+                                   op_message    Out Clob);
+  Procedure get_report_deletion_listing(p_user           In Varchar2,
+                                        p_debug          In Varchar2 Default 'NN',
+                                        p_date           In Date,
+                                        op_data_deletion Out ref_cur1,
+                                        op_status        Out Varchar2,
+                                        op_message       Out Clob);
+End rpt_bi_report;
