@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{2EA03208-C199-4DFB-8C89-18E13536A30F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iau_api", "api\iau_api_02\iau_api.csproj", "{4232E943-0682-406B-97FF-4DD4990A34C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4232E943-0682-406B-97FF-4DD4990A34C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4232E943-0682-406B-97FF-4DD4990A34C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4232E943-0682-406B-97FF-4DD4990A34C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4232E943-0682-406B-97FF-4DD4990A34C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4232E943-0682-406B-97FF-4DD4990A34C7} = {2EA03208-C199-4DFB-8C89-18E13536A30F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F2B5531-B9B3-4B83-85E1-56B7A5DFED28}
+	EndGlobalSection
+EndGlobal

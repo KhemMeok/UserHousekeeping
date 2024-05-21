@@ -1,0 +1,244 @@
+﻿.ito_bg_login {
+    background-image: url("../Images/bg/bg2020.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: 100% 100%;
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans/Regular/OpenSans-Regular.ttf') format('truetype');
+}
+
+* {
+    font-family: OpenSans-Regular;
+}
+
+/*Customize size select box live search*/
+
+.select2-selection__rendered {
+    line-height: 30px !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 29px !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.select2-container.form-control {
+    height: auto !important;
+}
+
+/*Remove border radius from class form-control*/
+.form-control {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .flex-container > button {
+        margin: 5px;
+        text-align: center;
+    }
+
+.tableNoWrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.modal-open {
+    -moz-appearance: menuimage;
+}
+
+    .modal-open::-webkit-scrollbar {
+        width: 0 !important;
+    }
+
+.select2-container .select2-selection--multiple {
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    border-radius: 0;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+}
+
+.select2-container .select2-search--inline {
+    line-height: inherit;
+}
+
+.select2-container .select2-selection__choice {
+    height: 25px !important;
+    line-height: 25px !important;
+}
+
+/*Declare varialbe*/
+:root {
+    --font-size: 12px;
+    --sidebar-bg-color: #00929e;
+    --card-header-bg-color: #00929e;
+}
+
+body {
+    font-size: var(--font-size);
+}
+
+.bootstrap-datetimepicker-widget {
+    font-size: var(--font-size);
+}
+
+.card-tools .dropdown-menu-right a {
+    font-size: var(--font-size);
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: var(--font-size);
+}
+
+#MAIT_CONTENT_TABS {
+    font-size: var(--font-size);
+}
+
+.card-header:not(.note-toolbar) {
+    height: 30px;
+    margin: 0px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.card-title {
+    font-size: var(--font-size);
+    margin: 0;
+    padding-top: 0px;
+}
+
+.card-tools {
+    font-size: var(--font-size);
+    margin: 0;
+    padding-top: 0px;
+}
+
+.card-footer {
+    min-height: 35px;
+    height: auto;
+    margin: 0px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+}
+
+    .card-footer .flex-container {
+        margin: 0;
+        padding-top: 0px;
+    }
+
+label, .card-header, .card-footer, #page_title, .breadcrumb-item, .nav-item a {
+    text-transform: capitalize;
+}
+
+.btn-move {
+    margin-top: 60px;
+}
+
+@media screen and (max-width: 768px) and (max-width:812px) and (max-width:736px) and (max-width:667px) and (max-width:1024px) {
+    .btn-move {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) and (max-width:414px) and (max-width:740px) {
+    .btn-move {
+        float: left;
+        margin-top: 10px;
+    }
+}
+.sl_duallistbox{
+    font-size:var(--font-size);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.dataTable tbody tr {
+    cursor: pointer;
+}
+.btn-normal {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    border-radius: 12px;
+}
+
+    .btn-normal:hover {
+        background-color: #008CBA;
+        color: white;
+        border-radius: 12px;
+    }
+.t-checkbox {
+    text-align: center;
+    height: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.dataTables_wrapper tr {
+    height: 5px;
+    /*padding-top: 5px;
+    padding-bottom: 0px;
+    margin-top: 0px;*/
+}
+
+.dataTables_wrapper th {
+    height: 5px;
+    /*padding-top: 5px;
+    padding-bottom: 0px;
+    margin-top: 0px;*/
+    vertical-align: middle;
+}
+
+.dataTables_wrapper td {
+    height: 5px;
+    /*padding-top: 5px;
+    padding-bottom: 0px;
+    margin-top: 0px;*/
+    vertical-align: middle;
+}
+/*fix can't scroll after update or save in modal*/
+.modal {
+
+    overflow-y: auto;
+
+}
+.highlighted {
+    background-color: rgb(255, 152, 183);
+}

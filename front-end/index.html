@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link href="./css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/./ito/dist/css/adminlte.min.css"> -->
+
+    <title>ITO System</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./ito/plugins/fontawesome-free/css/all.css" />
+    <!-- Bootstrap v4 CSS -->
+    <link href="./ito/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" rel="stylesheet" />
+    <!-- Datatable -->
+    <link href="./ito/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/datatables-responsive/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/datatables-colreorder/css/colReorder.bootstrap4.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/datatables-select/css/select.bootstrap4.min.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="./ito/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <!-- Admin -->
+    <link rel="stylesheet" href="./ito/dist/css/adminlte.min.css" />
+    <!-- overlayScrollbars -->
+    <link href="./ito/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
+    <!-- Google Font: Source Sans Pro -->
+    <!--<link href="fonts/Source_Sans_Pro_300_400_400i_700.css" rel="stylesheet" />-->
+    <!-- W3 CSS-->
+    <link href="./ito/css/w3.css" rel="stylesheet" />
+    <!-- Icheck bootstrap-->
+    <link href="./ito/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
+    <!-- selector -->
+    <link href="./ito/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css" rel="stylesheet" />
+    <!-- Bootstrap datetimepicker css -->
+    <!--<link href="./ito/plugins/bootstrap_datepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />-->
+    <link href="./ito/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <!-- Toast -->
+    <link href="./ito/plugins/toastr/toastr.min.css" rel="stylesheet" />
+    <!-- ITO Css -->
+    <link href="./ito/css/ito_general.css" rel="stylesheet" />
+    <link href="./ito/fonts/ito_icons/ito_icons.css" rel="stylesheet" />
+    <!--<link href="./ito/plugins/summernote/summernote-bs4.min.css" rel="stylesheet" />-->
+    <link href="./ito/plugins/summernote/summernote-lite.min.css" rel="stylesheet" />
+    <link href="./ito/plugins/Material-Icons/material.icons.css" rel="stylesheet" />
+    <!--<link href="./ito/plugins/Float-Button/Circle/mfb.min.css" rel="stylesheet" />-->
+    <!-- Float Button -->
+    <link href="./ito/plugins/Float-Button/Circle/float_button.css" rel="stylesheet" />
+    <!--Tagging file-->
+    <link href="./ito/plugins/Tagging-System-Autocomplete-Amsify-Suggestags/css/amsify.suggestags.css" rel="stylesheet">
+</head>
+
+<!-- <body>
+    <header>
+        <nav class="navbar navbar-expand-sm" style="background-color: rgb(214, 214, 214);">
+            <a class="navbar-brand" href="#">UAT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fn_show_page('operation.html')">Operation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fn_show_page('review_approve.html')">Review Approve</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="row" style="margin: 10px 0px 0px 0px;">
+        <main id="main-content" role="main">
+            <div id="external-content"></div>
+        </main>
+    </div> -->
+
+<body class="hold-transition sidebar-mini layout-fixed layout-footer-not-fixed layout-navbar-fixed">
+
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+
+                    </li>
+                    <!--<li class="nav-item d-none d-sm-inline-block">
+                            <a href="index3.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>-->
+                </ul>
+
+                <!--<!-- SEARCH FORM -->
+                <div class="form-inline ml-3">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                            aria-label="Search" />
+                        <div class="input-group-append">
+                            <button class="btn btn-navbar" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>-->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img id="imgUser1" class="user-image" alt="User Image" />
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">
+                                <label id="lbl_user_name"></label>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!--<li>
+                                    <a href="javascript:FN_POP_MODAL('MODAL_CHANGE_PWD')" class="dropdown-item"><i class="fa fa-key"></i>&nbsp Change password</a>
+                                </li>-->
+                            <li>
+                                <a href="#" onclick="fnUserLogout()" role="tab" data-toggle="tab"
+                                    class="dropdown-item"><i style="vertical-align: middle;"
+                                        class="fa fa-sign-out-alt fa-1x"></i>&nbsp; Logout</a>
+                            </li>
+                            <li>
+                                <a onclick="fn_fetch_layout('User','My Profile','USER_PROFILE');" href="#USER_PROFILE"
+                                    role="tab" data-toggle="tab" class="dropdown-item"><i
+                                        style="vertical-align: middle;" class="fas fa-user-circle fa-1x"></i>&nbsp; My
+                                    Profile</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="fnUserClearCaches()" role="tab" data-toggle="tab"
+                                    class="dropdown-item"><i style="vertical-align: middle;"
+                                        class="fas fa-history fa-1x"></i>&nbsp; Clear Caches</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Right navbar links -->
+                <!--<ul class="navbar-nav ml-auto">-->
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i>4 new messages
+
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i>8 friend requests
+
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>3 new reports
+
+                            <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+                </ul>
+                <!--<div class="btn-group navbar-nav ml-auto">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-cogs"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                            <a class="dropdown-divider"></a>
+                            <asp:LinkButton CssClass="dropdown-item" runat="server" OnClick="LOGOUT"><i class="fa fa-sign-out-alt"></i> Logout</asp:LinkButton>
+                            <a href="javascript:FN_POP_MODAL('MODAL_CHANGE_PWD')" class="dropdown-item"><i class="fa fa-key"></i>Change password</a>
+                        </div>
+                    </div>-->
+            </nav>
+            <!-- /.navbar -->
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar elevation-2">
+                <!-- Brand Logo -->
+                <a href="#" class="brand-link">
+                    <img id="imgLogo" class="brand-image img-circle elevation-3" />
+                    <span class="brand-text font-weight-light" id="campany_name"></span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-auto">
+                        <ul class="nav nav-pills nav-sidebar flex-column mt-3 nav-child-indent " data-widget="treeview"
+                            role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+                            <!--<li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                        <p>
+                                            Dashboard
+                                        </p>
+                                    </a>
+                                </li>-->
+                            <li id="M001"  class="nav-item has-treeview">
+                                <a href="#" onclick="FnNotifiTreeOpen('DEMGT')" class="nav-link">
+                                    <i class="nav-icon fas fa-paperclip"></i>
+                                    <p>
+                                        DE Management
+                                        <i class="right fas fa-angle-left"></i>
+                                        <span id="sp_de_total_notifi" class="badge badge-danger right"></span>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM001"  class="nav-item">
+                                        <a href="#DE_BATCH_POSTING"
+                                            onclick="fn_fetch_layout('DE Management','Batch posting','DE_BATCH_POSTING');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Batch posting</p>
+                                            <span id="sp_de_your_req_notifi" class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li id="SM002"  class="nav-item">
+                                        <a href="#DE_BATCH_UPLOAD"
+                                            onclick="fn_fetch_layout('DE Management','Batch Upload','DE_BATCH_UPLOAD');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Batch Upload</p>
+                                            <span id="sp_de_req_upload_notifi" class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li id="SM003"  class="nav-item">
+                                        <a href="#DE_BATCH_AUTHORIZE"
+                                            onclick="fn_fetch_layout('DE Management','Batch Authorize','DE_BATCH_AUTHORIZE');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Batch Authorize</p>
+                                            <span id="sp_de_req_authorize_notifi"
+                                                class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li id="SM004"  class="nav-item">
+                                        <a href="#DE_MAIN_ACCOUNT"
+                                            onclick="fn_fetch_layout('DE Management','Main Account','DE_MAIN_ACCOUNT');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Main Account</p>
+                                        </a>
+                                    </li>
+                                    <li id="SM010"  class="nav-item">
+                                        <a href="#DE_BATCH_APPROVE"
+                                            onclick="fn_fetch_layout('DE Management','Approve Batch','DE_BATCH_APPROVE');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Approve Batch</p>
+                                            <span id="sp_de_req_delete_notifi" class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li id="SM011"  class="nav-item">
+                                        <a href="#DE_BATCH_DELETE"
+                                            onclick="fn_fetch_layout('DE Management','Delete Batch','DE_BATCH_DELETE');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Delete Batch</p>
+                                            <span id="sp_de_batch_delete_notifi"
+                                                class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li id="SM015"  class="nav-item">
+                                        <a href="#DE_BATCH_TYPE_CREATION"
+                                            onclick="fn_fetch_layout('DE Management','Batch Type Creation','DE_BATCH_TYPE_CREATION');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Batch Type Creation</p>
+                                        </a>
+                                    </li>
+                                    <li id="SM016"  class="nav-item">
+                                        <a href="#DE_PRE_CHECK_CREATION"
+                                            onclick="fn_fetch_layout('DE Management','Pre-Check Creation','DE_PRE_CHECK_CREATION');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Pre-Check Creation</p>
+                                        </a>
+                                    </li>
+                                    <li id="SM021"  class="nav-item">
+                                        <a href="#DE_CHECK_PENDING"
+                                            onclick="fn_fetch_layout('DE Management','Check Pending','DE_CHECK_PENDING');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Check Pending</p>
+                                        </a>
+                                    </li>
+                                    <li id="SM032"  class="nav-item">
+                                        <a href="#DE_PRE_CHECK_MAINTENANCE"
+                                            onclick="fn_fetch_layout('DE Management','Pre-Check Maintenance','DE_PRE_CHECK_MAINTENANCE');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Pre-Check Maintenance</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="M002" style="display: none;" class="nav-item has-treeview">
+                                <a href="#" onclick="FnNotifiTreeOpen('EOC_MGT')" class="nav-link">
+                                    <i class="nav-icon fas fa-hourglass-start"></i>
+                                    <p>
+                                        EoC Management
+                                        <i class="right fas fa-angle-left"></i>
+                                        <span id="eoc_mgt_notification_total" class="badge badge-danger right"></span>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM005" style="display: none;" class="nav-item">
+                                        <a href="#EOC_PARAMETERS"
+                                            onclick="fn_fetch_layout('EoC Management','Flexcube Parameters','EOC_PARAMETERS');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Flexcube Parameters</p>
+                                        </a>
+                                    </li>
+                                    <!--<li id="SM006" style="display: none;" class="nav-item">
+                                            <a href="#EOC_RESTORE_POINT_CREATE" onclick="fn_fetch_layout('EoC Management','Restore Point Creation','EOC_RESTORE_POINT_CREATE');" role="tab" data-toggle="tab" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Restore Point Creation</p>
+                                            </a>
+                                        </li>-->
+                                    <li id="SM023" style="display: none;" class="nav-item">
+                                        <a href="#EOC_MONITOR"
+                                            onclick="fn_fetch_layout('EoC Management','EoC Monitoring','EOC_MONITOR');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>EoC Monitoring</p>
+                                        </a>
+                                    </li>
+                                    <li id="SM029" style="display: none;" class="nav-item">
+                                        <a href="#EOC_FLEXCUBE_ISSUE"
+                                            onclick="fn_fetch_layout('Flexcube Issue','Flexcube Issue','EOC_FLEXCUBE_ISSUE');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Flexcube Issue</p>
+                                            <span id="eoc_flexcube_issue_notifi"
+                                                class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="M003" style="display: none;" class="nav-item has-treeview">
+                                <a href="#" onclick="FnNotifiTreeOpen('ACL')" class="nav-link">
+                                    <i class="nav-icon fas fa-folder"></i>
+                                    <p>
+                                        Access Management
+                                        <i class="right fas fa-angle-left"></i>
+                                        <span id="sp_acl_notificatin_total" class="badge badge-danger right"></span>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM007" style="display: none;" class="nav-item">
+                                        <a href="#ACL_REQUEST_CONTROL"
+                                            onclick="fn_fetch_layout('Access Management','Create request','ACL_REQUEST_CONTROL')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Create Request
+                                                <span id="sp_acl_notificatin_pending"
+                                                    class="badge badge-danger right"></span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li id="SM008" style="display: none;" class="nav-item">
+                                        <a href="#ACL_REQUEST_REVIEW"
+                                            onclick="fn_fetch_layout('Access Management','Review request','ACL_REQUEST_REVIEW')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Review
+                                                <span id="sp_acl_notificatin_review"
+                                                    class="badge badge-danger right"></span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li id="SM009" style="display: none;" class="nav-item">
+                                        <a href="#ACL_REQUEST_APPROVE"
+                                            onclick="fn_fetch_layout('Access Management','Approve request','ACL_REQUEST_APPROVE')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Approve
+                                                <span id="sp_acl_notificatin_approve"
+                                                    class="badge badge-danger right"></span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="M004"  class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-user-alt"></i>
+                                    <p>
+                                        User Managment
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM012"  class="nav-item">
+                                        <a href="#USER_CREATION"
+                                            onclick="fn_fetch_layout('User Managment','User Creation','USER_CREATION');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>User Creation</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM035"  class="nav-item">
+                                        <a href="#USER_CREATION"
+                                            onclick="fn_fetch_layout('User Managment','API End Point','API_END_POINT');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>API End Point</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="M005" style="display: none;" class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>
+                                        API Management
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM025" style="display: none;" class="nav-item">
+                                        <a href="#API_PARAMETERS"
+                                            onclick="fn_fetch_layout('API Management','API Parameters','API_PARAMETERS');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>API Parameters</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM026" style="display: none;" class="nav-item">
+                                        <a href="#API_CHECK_TRANSACTION"
+                                            onclick="fn_fetch_layout('API Management','Check Service Transaction','API_CHECK_TRANSACTION');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Check Transaction</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM028" style="display: none;" class="nav-item">
+                                        <a href="#API_CHECK_CONNECTION"
+                                            onclick="fn_fetch_layout('API Management','Check Connection Service','API_CHECK_CONNECTION');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>API Connection</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM030" style="display: none;" class="nav-item">
+                                        <a href="#API_USER_MANAGEMENT"
+                                            onclick="fn_fetch_layout('API Management','Api User Management','API_USER_MANAGEMENT');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>API User Management</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="M006" style="display: none;" class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-folder"></i>
+                                    <p>
+                                        Report Management
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM022" style="display: none;" class="nav-item">
+                                        <a href="#RPT_EOC_REPORT"
+                                            onclick="fn_fetch_layout('Report Management','EoC Report','RPT_EOC_REPORT')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                EoC Report
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM024" style="display: none;" class="nav-item">
+                                        <a href="#RPT_BI_BACKUP_RESTORE"
+                                            onclick="fn_fetch_layout('Report Management','BI Backup & Restore','RPT_BI_BACKUP_RESTORE')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                BI Backup & Restore
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM027" style="display: none;" class="nav-item">
+                                        <a href="#RPT_SERVER_INVENTORY"
+                                            onclick="fn_fetch_layout('Report Management','Server Inventory','RPT_SERVER_INVENTORY')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Server Inventory
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM013" style="display: none;" class="nav-item">
+                                        <a href="#RPT_USER_MANAGEMENT"
+                                            onclick="fn_fetch_layout('Report Management','User Management','RPT_USER_MANAGEMENT')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                User Management
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM070" style="display: none;" class="nav-item">
+                                        <a href="#RPT_PATCH_MANAGEMENT"
+                                            onclick="fn_fetch_layout('Report Management','Patch Management','RPT_PATCH_MANAGEMENT')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Patch Management
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM071" style="display: none;" class="nav-item">
+                                        <a href="#OS_PASSWORD_GENERATION"
+                                            onclick="fn_fetch_layout('Report Management','OS Password Generate','OS_PASSWORD_GENERATION')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                OS Password Generate
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM072" style="display: none;" class="nav-item">
+                                        <a href="#RPT_DOC_MANAGEMENT"
+                                            onclick="fn_fetch_layout('Report Management','Document Management','RPT_DOC_MANAGEMENT')"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Document Management
+                                                <!--<span id="sp_rpt_task_creation_notificatin_pending" class="badge badge-danger right"></span>-->
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--<ul class="nav nav-treeview">
+                                        <li id="SM073" style="display: none;" class="nav-item">
+                                            <a href="#RPT_BI_HOUSE_KEEPING" onclick="fn_fetch_layout('Report Management','User HouseKeeping','RPT_BI_HOUSE_KEEPING')" role="tab" data-toggle="tab" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>
+                                                    User HouseKeeping
+                                                    <i class="right fas fa-angle-left"></i>
+                                                   
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>-->
+                                <ul class="nav nav-treeview">
+                                    <li id="SM073" style="display: none; cursor: pointer;" class="nav-item">
+                                        <a <!--href="#RPT_BI_HOUSE_KEEPING"
+                                            onclick="fn_fetch_layout('Report Management','User HouseKeeping','RPT_BI_HOUSE_KEEPING')"
+                                            --> role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                User HouseKeeping
+                                                <i class="right fas fa-angle-left"></i>
+                                                <span id="rpt_iau_main_module_notifi_ele_id"
+                                                    class="badge badge-danger right"></span>
+                                            </p>
+                                        </a>
+                                        <!-- Adding "Review Approve" under User HouseKeeping -->
+                                        <ul class="nav nav-treeview">
+                                            <li id="SM073_01" class="nav-item">
+                                                <a href="#RPT_IAU_OPERATION"
+                                                    onclick="fn_fetch_layout('Report Management','User Housekeeping Operation','RPT_IAU_OPERATION')"
+                                                    role="tab" data-toggle="tab" class="nav-link">
+                                                    <span>&nbsp;&nbsp;</span>
+                                                    <i class="fas fa-tasks nav-icon"></i>
+                                                    <p>
+                                                        Operation
+                                                        <span id="rpt_iau_sub_module_operation_notifi_ele_id"
+                                                            class="badge badge-danger right"></span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="nav nav-treeview">
+                                            <li id="SM073_02" class="nav-item">
+                                                <a href="#RPT_IAU_REVIEW_APPROVE"
+                                                    onclick="fn_fetch_layout('Report Management','User Housekeeping Review','RPT_IAU_REVIEW_APPROVE')"
+                                                    role="tab" data-toggle="tab" class="nav-link">
+                                                    <span>&nbsp;&nbsp;</span>
+                                                    <i class="far fa-check-circle nav-icon"></i>
+                                                    <p>
+                                                        Review Approve
+                                                        <span id="rpt_iau_sub_module_review_approve_notifi_ele_id"
+                                                            class="badge badge-danger right"></span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li id="M007"  class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-server nav-icon"></i>
+                                    <p>
+                                        Weblogic Management
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li id="SM034"  class="nav-item">
+                                        <a href="#WLS_MANAGE_SERVER"
+                                            onclick="fn_fetch_layout('Weblogic Management','Manage Server','WLS_MANAGE_SERVER');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Manage Server</p>
+                                        </a>
+                                    </li>
+                                    <!-- <li id="SM035"  class="nav-item">
+                                            <a href="#WLS_MANAGE_SERVER" onclick="fn_fetch_layout('Weblogic Management','Change Password Datasource','WLS_CHG_JDBC');" role="tab" data-toggle="tab" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Change Password Datasource</p>
+                                            </a>
+                                        </li>-->
+                                    <li id="SM036"  class="nav-item">
+                                        <a href="#WLS_CREDENTIAL"
+                                            onclick="fn_fetch_layout('Weblogic Management','Create Weblogic Credential','WLS_CREDENTIAL');"
+                                            role="tab" data-toggle="tab" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Create Weblogic Credential</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5 id="page_title" class="m-0 text-dark"></h5>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item" id="page_title_right"></li>
+                                    <li class="breadcrumb-item active" id="page_title_right_active"></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
+                <!-- Main content -->
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="tab-content container-fluid" id="MAIT_CONTENT_TABS">
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">
+                    Hattha Bank Plc - Internal System
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; by IT Operations.</strong> All rights reserved.
+                <!--&nbsp;|&nbsp;<strong>Datetime: </strong><span id="ito_system_date"></span>-->
+                &nbsp;|&nbsp;<strong>Standard Exchange Rate: </strong>KHR:&nbsp;<span
+                    id="fcub_standard_exch_rate_KHR"></span>&nbsp;- THB:&nbsp;<span
+                    id="fcub_standard_exch_rate_THB"></span>
+                &nbsp;|&nbsp;<strong>API Services: &nbsp;<span id="ito_api_server"><i id="icon_api_service"
+                            class="fas fa-globe fa-1x"></i></span></strong>
+
+            </footer>
+        </div>
+        <div class="modal" id="modalProcess">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content" style="border: 0px; background-color: transparent; box-shadow: none">
+                    <!-- Modal body -->
+                    <div class="modal-body text-center" style="border: 0px;">
+                        <div class="spinner-border text-primary"></div>
+                        <div style="font-weight: bold;" class="text-light" id="modalProcessActionName"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal confirm-->
+        <div id="MODAL_CONFIRM" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span id="SP_CONFIRM_TITLE"></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row text-center">
+                            <div class="col-sm-12">
+                                <p>
+                                    <span id="SP_CONFIRM_QUES"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="SP_RESPOND_UPDATE"></span>
+                        <button type="button" class="btn btn-primary btn-xs" id="BTN_CONFIRM_YES">
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">
+                            Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal confirm-->
+        <div id="modal_confirm_note" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span id="md_confirm_title"></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row text-center">
+                            <div class="col-sm-12">
+                                <p>
+                                    <span id="md_confirm_question"></span>
+                                </p>
+                            </div>
+                            <div class="col-sm-12" id="md_div_confirm_note" style="display: none;">
+                                <textarea id="md_confirm_note" class="form-control" placeholder="Remark......"
+                                    style="margin: 0px; width: 100%; height: 50px; background-color: #f7de99; border-color: #997205; color: black; font-size: 12px;"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row  mr-auto">
+                            <div class="col-sm-12 text-nowrap">
+                                <div class="icheck-primary d-inline">
+                                    <input type="checkbox" class="form-control form-control-sm"
+                                        id="md_confirm_check_show" />
+                                    <label style="font-weight: normal;" for="md_confirm_check_show">Don't show me
+                                        again</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="flex-container">
+                                <button type="button" class="btn btn-primary btn-xs" id="md_confirm_btn"></button>
+                                <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal add note-->
+        <div id="modal_add_note" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>Add Note</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row text-center">
+                            <div class="col-sm-12">
+                                <textarea id="md_add_note_note" class="form-control"
+                                    style="margin: 0px; width: 100%; height: 50px; background-color: #f7de99; border-color: #997205; color: black; font-size: 12px;"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="flex-container">
+                            <button type="button" class="btn btn-primary btn-xs" id="md_add_note_btn">Save</button>
+                            <button type="button" class="btn btn-danger btn-xs" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal confirm-->
+        <!-- End modal change password -->
+
+        <div class="modal" id="modalDetail" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>Detail</span>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div id="div_detail_text"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modalMessage">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">
+                        Information
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12" id="sms_information">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" modal-footer">
+                        <button type="button" class="btn btn-primary btn-xs"
+                            onclick="fnAcceptNewUpdate()">Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./js/select2.min.js"></script>
+    <script src="./js/ito_Core.js"></script>
+    <script src="./js/ito_variable.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/rpt_iau_handle.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+        <script src="https://adminlte.io/themes/v3/./ito/dist/js/adminlte.min.js"></script> -->
+
+    <!-- jQuery -->
+    <script src="./ito/plugins/jquery/jquery.min.js"></script>
+    <!--<script src="./ito/script/jquery-3.3.1.js"></script>-->
+    <!-- Bootstrap 4 -->
+    <script src="./ito/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./ito/script/popper.min.js"></script>
+
+    <!-- ITO On load JS -->
+    <script src="./ito/script/ito_notifications_handle.js"></script>
+    <script src="./ito/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="./ito/script/ON_LOAD.js"></script>
+    <script src="./ito/script/ito_user_info_handle.js"></script>
+
+    <!-- OverlayScrollbar-->
+    <script src="./ito/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="./ito/dist/js/adminlte.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="./ito/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstap datetime js -->
+    <!--<script src="./ito/plugins/bootstrap_datepicker/js/bootstrap-datetimepicker.min.js"></script>-->
+    <script src="./ito/plugins/daterangepicker/moment.min.js"></script>
+    <script src="./ito/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="./ito/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Toast js (alert)-->
+    <script src="./ito/plugins/toastr/toastr.min.js"></script>
+    <!-- Datatable JS -->
+    <script src="./ito/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="./ito/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./ito/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="./ito/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="./ito/plugins/datatables-colreorder/js/dataTables.colReorder.min.js"></script>
+    <script src="./ito/plugins/datatables-select/js/select.bootstrap4.min.js"></script>
+    <!-- Selector -->
+    <script src="./ito/plugins/select2/js/select2.full.min.js"></script>
+    <script src="./ito/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- Toast -->
+    <script src="./ito/plugins/toastr/toastr.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="./ito/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="./ito/plugins/summernote/summernote-lite.min.js"></script>
+    <script src="./ito/script/html2canvas.min.js"></script>
+    <script src="./ito/script/jquery.elevatezoom.js"></script>
+    <script src="./ito/script/ito_layout.js"></script>
+    <script src="./ito/script/ito_content_validator.js"></script>
+    <script src="./ito/script/ito_Core.js"></script>
+    <script src="./ito/script/ito_system.js"></script>
+    <script src="./ito/plugins/Float-Button/Circle/mfb.min.js"></script>
+    <script src="./ito/plugins/Float-Button/Circle/modernizr.touch.js"></script>
+    <script src="./ito/plugins/CanvasJS/jquery.canvasjs.min.js"></script>
+    <!--InputMask-->
+    <script src="./ito/plugins/moment/moment.min.js"></script>
+    <script src="./ito/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <!--Zipping file-->
+    <script src="./ito/plugins/jszip/jszip.min.js"></script>
+    <script src="./ito/plugins/filesaver/FileSaver.min.js"></script>
+    <script src="./ito/plugins/filesaver/jszip-utils.min.js"></script>
+    <!--Tagging file-->
+    <script src="./ito/plugins/Tagging-System-Autocomplete-Amsify-Suggestags/js/jquery.amsify.suggestags.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,887 @@
+<div id="RPT_IAU_OPERATION" class="tab-pane">
+    <div class="col-sm-12">
+        <div class="card card-primary card-outline card-outline-tabs">
+            <div class="card-header p-0 border-bottom-0">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="pill" href="#href_tab_id_bi_housekeeping"
+                            onclick="fn_tab_change_iau('bi_tab')" role="tab">
+                            BI User HouseKeeping
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="href_tab_id_bi_housekeeping" role="tabpanel">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card h-100">
+                                    <div class="card-header" style="padding-top: 0px">
+                                        <span class="card-title" style="padding-top: 5px">Operation</span>
+                                        <div class="card-tools">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-tool dropdown-toggle"
+                                                    data-toggle="dropdown">
+                                                    <i class="fas fa-wrench"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                    <a class="dropdown-divider"></a>
+                                                    <a href="javascript:fn_clear_all_by_tab_iau('BI')"
+                                                        class="dropdown-item" style="color: black">New</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label for="bi_date_report_ele_id">
+                                                        Report Date
+                                                    </label>
+                                                    <input type="text" id="bi_date_report_ele_id"
+                                                        onchange="fn_tab_change_iau('bi_tab')"
+                                                        class="form-control form-control-sm" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="card h-100">
+                                    <div class="card-header">
+                                        <div class="card-title">Process</div>
+                                    </div>
+                                    <div class="card-body table-responsive">
+                                        <table id="de_posting_tbl_process" class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th nowrap># Process Name</th>
+                                                    <th nowrap></th>
+                                                    <th nowrap># User Count</th>
+                                                    <th nowrap># Status</th>
+                                                    <th nowrap># Message</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="">
+                                                    <td nowrap>Updated BI Users Status</td>
+                                                    <td nowrap>:</td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_update_user_status_bi_housekeeping">
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_update_user_status_bi_housekeepingCheck">
+                                                            <i id="icon_status_update_user_status_bi_housekeeping"></i>
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <a style="display: none"
+                                                                id="icon_ms_update_user_status_bi_iau"
+                                                                href="javascript:modals.Open('modual_ms_update_user_status_bi_housekeeping')"
+                                                                onclick="iau_fn_bi_update_status_tab_select()">
+                                                                <i class="far fa-envelope fa-lg"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr id="">
+                                                    <td nowrap>Updated BI Users Email</td>
+                                                    <td nowrap>:</td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_update_user_email_bi_housekeeping">
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_update_user_email_bi_housekeepingCheck">
+                                                            <i id="icon_status_update_user_email_bi_housekeeping"></i>
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <a style="display: none"
+                                                                id="icon_ms_update_user_email_bi_iau"
+                                                                href="javascript:modals.Open('modual_ms_update_user_email_bi_housekeeping')">
+                                                                <i class="far fa-envelope fa-lg"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr id="">
+                                                    <td nowrap>Pulled Last Login Users</td>
+                                                    <td nowrap>:</td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_ms_pull_last_login_bi_housekeeping">
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_ms_pull_last_login_bi_housekeepingCheck">
+                                                            <i id="icon_status_pull_last_login_bi_housekeeping"></i>
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <a style="display: none"
+                                                                id="icon_ms_pull_last_login_user_bi_iau"
+                                                                href="javascript:modals.Open('modual_ms_pull_last_login_bi_housekeeping')">
+                                                                <i class="far fa-envelope fa-lg"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr id="">
+                                                    <td nowrap>Generated BI User Housekeeping</td>
+                                                    <td nowrap>:</td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_get_bi_iau"> </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_get_bi_iauCheck">
+                                                            <i id="icon_status_get_bi_iau"></i>
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <a style="display: none" id="icon_ms_get_bi_iau"
+                                                                title="Detail Generate BI HouseKeeping"
+                                                                href="javascript:modals.Open('modual_ms_get_bi_hosekeeping')"
+                                                                onclick="iau_fn_bi_iau_tab_select()">
+                                                                <i class="far fa-envelope fa-lg fa-lg"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr id="">
+                                                    <td nowrap>Generated BI User Deletion</td>
+                                                    <td nowrap>:</td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="td_get_bi_user_deletion_bi_housekeeping">
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <i id="icon_status_get_bi_deletion_bi_housekeeping"></i>
+                                                        </span>
+                                                    </td>
+                                                    <td nowrap colspan="1">
+                                                        <span id="">
+                                                            <a style="display: none"
+                                                                id="icon_ms_get_bi_user_deletion_bi_housekeeping"
+                                                                title="Detail Generate BI User Deletion"
+                                                                href="javascript:modals.Open('modual_ms_get_bi_deletion_bi_housekeeping')"
+                                                                onclick="iau_fn_bi_user_deletion_tab_select()">
+                                                                <i class="far fa-envelope fa-lg fa-lg"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="flex-container">
+                    <button id="RptBIHkpGenDBHkpBtn" class="btn btn-primary btn-xs" type="button" style="display: none"
+                        onclick="rpt_iau_fn_insert_process_step_all('db_get_iau')">
+                        <i id="" class="fas fa-sync"></i>
+                        &nbsp;DB Housekeeping
+                    </button>
+                </div>
+                <div class="flex-container">
+                    <button id="RptBIHkpGenRptBIHkpBtn" class="btn btn-primary btn-xs" type="button"
+                        style="display: none" onclick="rpt_iau_fn_insert_process_step_all('gen_bi_inactive')">
+                        <i id="" class="fas fa-sync"></i>
+                        &nbsp;Job Process BI Housekeeping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"><i class="fa fa-list-alt"></i> Report Listing</span>
+                <div class="card-tools">
+                    <button title="Minimize" type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="rang_date_id_iau">Report Date</label>
+                                <input type="text" id="rang_date_id_iau" onchange=""
+                                    class="form-control form-control-sm" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card card-primary card-outline card-outline-tabs">
+                            <div class="card-header p-0 border-bottom-0">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#rpt_bi_update_status_listing_tab"
+                                            role="tab" onclick="fn_tab_change_iau('bi_update_status_tab')">
+                                            BI User Update Status Listing
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#rpt_bi_inactive_listing_tab"
+                                            onclick="fn_tab_change_iau('bi_hkp_listing_tab')" role="tab">
+                                            BI User HouseKeeping Listing
+                                            <span id="rpt_iau_tab_bi_housekeeping_notifi_ele_id"
+                                                class="badge badge-danger right"></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#rpt_bi_deletion_listing_tab"
+                                            onclick="fn_tab_change_iau('bi_deletion_tab')" role="tab">
+                                            BI User Deletion Listing
+                                        </a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#rpt_db_user_hkp_listing_tab"
+                                            onclick="fn_tab_change_iau('db_listing_tab')" role="tab">
+                                            DB User Housekeeping Listing
+                                            <span id="" class="badge badge-danger right"></span>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show" id="rpt_bi_update_status_listing_tab"
+                                        role="tabpanel">
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <table id="rpt_bi_update_status_listing" cellpadding="0" cellspacing="0"
+                                                    class="display nowrap compact table table-bordered table-hover table-sm"
+                                                    style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <input type="checkbox" style="margin-left: 50%"
+                                                                    id="rpt_bi_update_status_listing_ck_selectall" />
+                                                            </th>
+                                                            <th nowrap>No</th>
+                                                            <th nowrap>Status</th>
+                                                            <th nowrap>Branch Code</th>
+                                                            <th nowrap>User ID</th>
+                                                            <th nowrap>User Name</th>
+                                                            <th nowrap>Current Status</th>
+                                                            <th nowrap>Previous Status</th>
+                                                            <th nowrap>Request Date</th>
+                                                            <th nowrap>Create Date</th>
+                                                            <th nowrap>Close Date</th>
+                                                            <th nowrap>Remarks</th>
+                                                            <th nowrap></th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show active" id="rpt_bi_inactive_listing_tab"
+                                        role="tabpanel">
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <table id="rpt_bi_inactive_listing" cellpadding="0" cellspacing="0"
+                                                    class="display nowrap compact table table-bordered table-hover table-sm"
+                                                    style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <input type="checkbox" style="margin-left: 50%"
+                                                                    id="rpt_bi_inactive_listing_ck_selectall" />
+                                                            </th>
+                                                            <th nowrap>No</th>
+                                                            <th nowrap>Status</th>
+                                                            <th nowrap>Branch Code</th>
+                                                            <th nowrap>User ID</th>
+                                                            <th nowrap>User Name</th>
+                                                            <th nowrap>Created Date</th>
+                                                            <th nowrap>Last Signed</th>
+                                                            <th nowrap>Num Last Signed</th>
+                                                            <th nowrap>Report Date</th>
+                                                            <th nowrap>Review Date</th>
+                                                            <th nowrap>Remarks</th>
+                                                            <th nowrap></th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="rpt_bi_deletion_listing_tab" role="tabpanel">
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <table id="rpt_bi_deletion_listing" cellpadding="0" cellspacing="0"
+                                                    class="display nowrap compact table table-bordered table-hover table-sm"
+                                                    style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <input type="checkbox" style="margin-left: 50%"
+                                                                    id="rpt_bi_deletion_listing_ck_selectall" />
+                                                            </th>
+                                                            <th>No</th>
+                                                            <th>Branch Code</th>
+                                                            <th>User ID</th>
+                                                            <th>User Name</th>
+                                                            <th>Request date</th>
+                                                            <th>Created Date</th>
+                                                            <th>Close Date</th>
+                                                            <th>Status</th>
+                                                            <th>Remarks</th> 
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                     
+                                </div>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="flex-container">
+                    <button id="RptBIHkpRefreshBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button" onclick="rpt_iau_fn_refresh_listing()">
+                        <i id="iconRefreshListing" class="fas fa-sync" style="color: white"></i>&nbsp;Refresh
+                    </button>
+                    <button id="RptBIHkpOperationBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button" onclick="">
+                        <i class="fas fa-pencil-alt" style="color: white"></i>&nbsp;Edit
+                    </button>
+                    <button id="RptBIHkpReqAuthBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button" 
+                        onclick="rpt_iau_fn_popup_modal_conform_review_approve()">
+                        <i class="fa fa-paper-plane fa-flip"></i>&nbsp;Sent Request
+                    </button>
+                     
+                    <button id="RptBIHkpSentMailInformBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button"  
+                        onclick="rpt_iau_fn_insert_process_step_all('inform')">
+                        <i class="fa fa-paper-plane fa-flip"></i>&nbsp;Inform User
+                    </button>
+                     
+                    <button id="RptDBHkpOperationBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button" onclick="fnOpenModalOperationDBUserHousekeeping()">
+                        <i class="fas fa-pencil-alt" style="color: white"></i>&nbsp;Edit
+                    </button>
+                    <button id="RptDBHkpReqAuthBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button"  
+                        onclick="rpt_iau_fn_insert_process_step_all('db_req_auth')">
+                        <i class="fa fa-paper-plane fa-flip"></i>&nbsp;Request Authorize
+                    </button>
+                    <button id="RptDBHkpAuthBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button"  onclick="rpt_iau_fn_insert_process_step_all('db_auth')">
+                        <i class="fa fa-check"></i>&nbsp;Authorize
+                    </button>
+                    <button id="RptDBHkpRejectBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-danger btn-xs" type="button"   onclick="rpt_iau_fn_insert_process_step_all('db_reject')">
+                        <i class="fa fa-times" style="color: white"></i>&nbsp;Reject
+                    </button>
+                    <button id="RptDBHkpSentMailInformBTN" style="color: white; font-family: 'Segoe UI'"
+                        class="btn btn-primary btn-xs" type="button"
+                        onclick="rpt_iau_fn_insert_process_step_all('db_inform')">
+                        <i class="fa fa-paper-plane fa-flip"></i>&nbsp;Inform User  
+                    </button>
+                    <button id="RptBIHkpGenRptBIDlBtn" class="btn btn-primary btn-xs" type="button"
+                        style="display: none"  
+                        onclick="rpt_iau_fn_insert_process_step_all('get_bi_deletion')">
+                        <i id="iconBIDeletion" class="fas fa-sync"></i>
+                        &nbsp;Close User Inactive
+                    </button>
+                </div>
+            </div>
+        </div>
+         
+        <div class="modal" id="modual_ms_update_user_status_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Update User Status</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_update_user_status_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modual_ms_update_user_email_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Update User Email</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_update_user_email_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modual_ms_pull_last_login_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Pull Last Login</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_pull_last_login_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modual_ms_get_bi_hosekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">BI User Housekeeping</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_get_bi_iau">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modual_ms_get_bi_user_close_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Get BI User Close</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_get_bi_user_close_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modual_ms_insert_bi_user_close_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Insert BI User Close</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_insert_bi_user_close_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modual_ms_get_bi_deletion_bi_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Get BI Deletion</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_get_bi_deletion_bi_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modual_ms_user_inform_db_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">DB User Inform</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_user_inform_db_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modual_ms_user_remove_db_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">DB User Remove</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_user_remove_db_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modual_ms_total_user_db_housekeeping">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">DB Total User</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_total_user_db_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        <div class="modal" id="modal_operation_bi_iau">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">BI User Operation</div>
+                    <div class="modal-body">
+                         
+                        <div class="card">
+                            <div class="card-header" style="padding-top: 0px">
+                                <span class="card-title" style="padding-top: 5px">Operation</span>
+                                <div class="card-tools">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-tool dropdown-toggle"
+                                            data-toggle="dropdown">
+                                            <i class="fas fa-wrench"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                            <a class="dropdown-divider"></a>
+                                            <a href="javascript:function" class="dropdown-item"
+                                                style="color: black">New</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="db_date_report_id">Report Date</label>
+                                            <input type="text" id="db_date_report_id" onchange=""
+                                                class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="db_date_report_id">Report Date</label>
+                                            <input type="text" id="db_date_report_id" onchange=""
+                                                class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="db_date_report_id">Report Date</label>
+                                            <input type="text" id="db_date_report_id" onchange=""
+                                                class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="db_date_report_id">Report Date</label>
+                                            <input type="text" id="db_date_report_id" onchange=""
+                                                class="form-control form-control-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="flex-container">
+                                    <button id="RptBIHkpRefreshBTN" style="color: white; font-family: 'Segoe UI'"
+                                        class="btn btn-primary btn-xs" type="button"
+                                        onclick="rpt_iau_fn_refresh_listing()">
+                                        <i id="iconRefreshListing" class="fas fa-sync"
+                                            style="color: white"></i>&nbsp;Refresh
+                                    </button>
+                                    <button id="RptBIHkpOperationBTN" style="color: white; font-family: 'Segoe UI'"
+                                        class="btn btn-primary btn-xs" type="button"
+                                        onclick="fnOpenModalOperationBIUserHousekeeping()">
+                                        <i class="fas fa-pencil-alt" style="color: white"></i>&nbsp;Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="card">
+                            <div class="card-header" style="padding-top: 0px">
+                                <span class="card-title" style="padding-top: 5px">Operation</span>
+                                <div class="card-tools">
+                                    <div class="btn-group"></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="rpt_bi_inactive_operation_listing" cellpadding="0" cellspacing="0"
+                                        class="display nowrap compact table table-bordered table-hover table-sm"
+                                        style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" style="margin-left: 50%"
+                                                        id="rpt_bi_inactive_listing_ck_selectall" />
+                                                </th>
+                                                <th nowrap>No</th>
+                                                <th nowrap>Branch Code</th>
+                                                <th nowrap>User ID</th>
+                                                <th nowrap>User Name</th>
+                                                <th nowrap>Created Date</th>
+                                                <th nowrap>Last Signed</th>
+                                                <th nowrap>Num Last Signed</th>
+                                                <th nowrap>Report Date</th>
+                                                <th nowrap>Review Date</th>
+                                                <th nowrap>Remarks</th>
+                                                <th nowrap>status</th>
+                                                <th nowrap></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="flex-container">
+                                    <button id="RptBIHkpRefreshBTN" style="color: white; font-family: 'Segoe UI'"
+                                        class="btn btn-primary btn-xs" type="button"
+                                        onclick="rpt_iau_fn_refresh_listing()">
+                                        <i id="iconRefreshListing" class="fas fa-sync"
+                                            style="color: white"></i>&nbsp;Refresh
+                                    </button>
+                                    <button id="RptBIHkpOperationBTN" style="color: white; font-family: 'Segoe UI'"
+                                        class="btn btn-primary btn-xs" type="button"
+                                        onclick="fnOpenModalOperationBIUserHousekeeping()">
+                                        <i class="fas fa-pencil-alt" style="color: white"></i>&nbsp;Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="modal" id="modal_operation_db_iau">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Database User Operation</div>
+                    <div class="modal-body text-center">
+                        <p id="txt_ms_total_user_db_housekeeping">Hello 😉🤞</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal_operation_confirm_reviewer_approve" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- Modal body -->
+                    <div class="modal-header">Confirm User</div>
+                    <div class="modal-body align-content-between">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">Reviewer</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="flex-container">
+                                                <button type="button" class="btn btn-primary btn-xs"
+                                                    onclick="rpt_iau_fn_enable_add_reviewer_sl('add')">
+                                                    <i class="fa fa-plus fa-sm"></i>&nbsp;Add Reviewer
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs"
+                                                    onclick="rpt_iau_fn_enable_add_reviewer_sl('remove')">
+                                                    <i class="fa fa-minus fa-sm"></i>&nbsp;Remove Reviewer
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="table" style="align-items: center;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Reviewer</th>
+                                                        <th>Position</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="rpt_iau_reviewer_ele_id_01">
+                                                        <td style="width: 200px;" aria-colcount="2">
+                                                            <select style="width: 100%"
+                                                                data-placeholder="Choose Reviewer 1"
+                                                                onchange="rpt_iau_fn_show_position_to_input(this.value,'rpt_iau_user_review_position_ele_id_01')"
+                                                                class="col-sm-12 form-control form-control-sm"
+                                                                id="rpt_iau_user_review_ele_id_01"></select>
+                                                        </td>
+                                                        <td aria-colcount="1">
+                                                            <input disabled type="text"
+                                                                id="rpt_iau_user_review_position_ele_id_01" onchange=""
+                                                                class="col-sm-12 form-control form-control-sm" />
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="rpt_iau_reviewer_ele_id_02" style="display: none">
+                                                        <td style="width: 200px;">
+                                                            <select style="width: 100%"
+                                                                data-placeholder="Choose Reviewer 2"
+                                                                onchange="rpt_iau_fn_show_position_to_input(this.value,'rpt_iau_user_review_position_ele_id_02')"
+                                                                class="col-sm-12 form-control form-control-sm"
+                                                                id="rpt_iau_user_review_ele_id_02"></select>
+                                                        </td>
+                                                        <td>
+                                                            <input disabled type="text"
+                                                                id="rpt_iau_user_review_position_ele_id_02" onchange=""
+                                                                class="col-sm-12 form-control form-control-sm" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="rpt_iau_reviewer_ele_id_03" style="display: none">
+                                                        <td style="width: 200px;">
+                                                            <select style="width: 100%"
+                                                                data-placeholder="Choose Reviewer 3"
+                                                                onchange="rpt_iau_fn_show_position_to_input(this.value,'rpt_iau_user_review_position_ele_id_03')"
+                                                                class="col-sm-12 form-control form-control-sm"
+                                                                id="rpt_iau_user_review_ele_id_03"></select>
+                                                        </td>
+                                                        <td>
+                                                            <input disabled type="text"
+                                                                id="rpt_iau_user_review_position_ele_id_03" onchange=""
+                                                                class="col-sm-12 form-control form-control-sm" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="rpt_iau_reviewer_ele_id_04" style="display: none">
+                                                        <td style="width: 200px;">
+                                                            <select style="width: 100%"
+                                                                data-placeholder="Choose Reviewer 4"
+                                                                onchange="rpt_iau_fn_show_position_to_input(this.value,'rpt_iau_user_review_position_ele_id_04')"
+                                                                class="col-sm-12 form-control form-control-sm"
+                                                                id="rpt_iau_user_review_ele_id_04"></select>
+                                                        </td>
+                                                        <td>
+                                                            <input disabled type="text"
+                                                                id="rpt_iau_user_review_position_ele_id_04" onchange=""
+                                                                class="col-sm-12 form-control form-control-sm" />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="card-footer">
+                                    <div class="flex-container">
+                                        <button type="button" class="btn btn-primary btn-xs"
+                                            onclick="rpt_iau_fn_enable_add_reviewer_sl('add')">
+                                            <i class="fa fa-plus fa-sm"></i>&nbsp;Add
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs"
+                                            onclick="rpt_iau_fn_enable_add_reviewer_sl('remove')">
+                                            <i class="fa fa-sm"></i>&nbsp;Remove
+                                        </button>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="card">
+                                <div class="card-header">Approver</div>
+                                <div class="card-body">
+
+                                    <div class="col-sm-12">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 200px;">
+                                                        <select style="width: 100%"
+                                                            data-placeholder="Choose Approver..."
+                                                            onchange="rpt_iau_fn_show_position_to_input(this.value,'rpt_iau_user_approve_position_ele_id')"
+                                                            class="col-sm-12 form-control form-control-sm"
+                                                            id="rpt_iau_user_approve_ele_id"></select>
+                                                    </td>
+                                                    <td>
+                                                        <input disabled type="text"
+                                                            id="rpt_iau_user_approve_position_ele_id" onchange=""
+                                                            class="col-sm-12 form-control form-control-sm" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary btn-xs" type="button"
+                            onclick="rpt_iau_fn_insert_process_step_all('req_auth')"
+                            
+                        > 
+                            <i class="fa fa-paper-plane fa-flip"></i>&nbsp; Request
+                        </button>
+                        <button type="button" onclick="rpt_iau_fn_close_modal_()" class="btn btn-default btn-xs"
+                            data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

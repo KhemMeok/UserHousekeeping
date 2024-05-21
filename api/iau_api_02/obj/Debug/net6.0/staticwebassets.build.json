@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "30S8sNLnZkYrtYPXN58PX/A5vIpZmDlXeOJE5IN12x8=",
+  "Source": "iau_api",
+  "BasePath": "_content/iau_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

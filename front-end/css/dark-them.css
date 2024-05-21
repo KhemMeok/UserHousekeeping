@@ -1,0 +1,54 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.navbar .nav-link {
+    color: #e0e0e0;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff;
+}
+
+#external-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.btn-dark-mode-toggle {
+    background-color: #333;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-dark-mode-toggle:hover {
+    background-color: #444;
+}
+
+/* Dark theme for cards */
+.card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+.card-header {
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+}
+
+.card-body {
+    background-color: #1e1e1e;
+}
+
+.card-footer {
+    background-color: #2a2a2a;
+    border-top: 1px solid #333;
+}
